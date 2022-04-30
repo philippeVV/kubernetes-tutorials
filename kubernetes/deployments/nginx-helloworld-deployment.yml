@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-helloworld-deployment
+  name: nginx-helloworld
   labels:
     app: nginx
 spec:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx-helloworld
-        image: nginx-helloworld:latest
-        imagePullPolicy: Never
+        image: ghcr.io/philippevv/kubernetes-tutorials:main
+        imagePullPolicy: Always
         ports:
           - containerPort: 80
